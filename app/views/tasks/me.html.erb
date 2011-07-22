@@ -1,0 +1,16 @@
+<nav>
+<%= link_to "全部",tasks_path %>
+<%= link_to "本周",thisweek_tasks_path %>
+<%= link_to "今日",today_tasks_path%>
+<%= link_to "我的任务",today_tasks_path,:class=>"selected"%>
+</nav>
+<div class="sub_nav">
+	<div class="subnav_blank">
+	 <% if @user_name.blank? %>
+		不知道你是谁，请告诉管理员你的名字和IP
+	 <%else%>
+		Hi,<%= @user_name %>！你共有个<%= @tasks.size.to_s%>任务
+	 <%end%>
+	</div>
+</div>
+<%= render :partial => "tasks/tasklist" %>

@@ -1,0 +1,13 @@
+<nav>
+<%= link_to "全部",tasks_path,:class=>"selected" %>
+<%= link_to "本周",thisweek_tasks_path %>
+<%= link_to "今日",today_tasks_path%>
+<%= link_to "我的任务",me_tasks_path%>
+</nav>
+<div class="sub_nav">
+  <div class="subnav_blank">
+    搜索出<%=@tasks.size.to_s %>个任务
+  </div>	
+</div>
+<%= render :partial => "tasks/tasklist" %>
+<%= link_to raw('<span class="leftarrow icon"></span>返回任务列表'), tasks_path,:class=>'back button'%>

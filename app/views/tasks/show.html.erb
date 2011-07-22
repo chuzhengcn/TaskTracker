@@ -1,0 +1,41 @@
+<div class="edit_task_page_title">
+  <%= link_to '任务列表',tasks_path %> / <%=link_to @task.name,@task %>
+</div>
+<div class="task_info">
+  <table class="edit_task_table">
+    <tr>
+      <td class="task_attr_name">任务名称：</td><td><%= @task.name %></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">任务状态：</td><td><%= @task.state.name %></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">需求提交时间：</td><td><%=convet_time_to_m_d @task.submit_requirement_date %></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">提测时间：</td><td><%=convet_time_to_m_d @task.submit_test_date%></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">测试完成：</td><td><%=convet_time_to_m_d @task.submit_test_over_date%></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">发外网时间：</td><td><%=convet_time_to_m_d @task.submit_deliver_date%></td>
+    </tr>
+     <tr>
+      <td class="task_attr_name">需求人员：</td><td><%=task_user_by_dep @task,3%></td>
+    </tr>
+     <tr>
+      <td class="task_attr_name">开发人员：</td><td><%=task_user_by_dep @task,1%></td>
+    </tr>
+     <tr>
+      <td class="task_attr_name">测试人员：</td><td><%=task_user_by_dep @task,2%></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">备注：</td><td><%= @task.description %></td>
+    </tr>
+    <tr>
+      <td class="task_attr_name">任务最后更新：</td><td><%=time_ago_in_words @task.updated_at %> ago</td>
+    </tr>    
+  </table>
+</div>
+<div><%= link_to raw('<span class="leftarrow icon"></span>返回任务列表'), tasks_path,:class=>'back button' %></div>

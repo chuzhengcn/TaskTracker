@@ -1,0 +1,32 @@
+<nav>
+<%= link_to "全部",tasks_path,:class=>"selected" %>
+<%= link_to "本周",thisweek_tasks_path %>
+<%= link_to "今日",today_tasks_path%>
+<%= link_to "我的任务",me_tasks_path%>
+<div class="new_task_btn_outer"><%= link_to raw('<span class="plus icon"></span>添加新任务'),new_task_path,:class => "button " %></div>
+</nav>
+<div class="sub_nav">
+  <% unless @states.blank?%>
+    <span class="by_group_check">
+      <div>任务状态</div>
+      <div class="group_list">
+    <% for state in @states%>
+      <%= link_to state.name,by_state_tasks_path+"?stateid="+state.id.to_s%>
+    <%end%>
+      </div>
+    </span>
+  <%end%>
+  <% unless @users.blank?%>
+    <span class="by_group_check">
+      <div>任务人员</div>
+      <div class="group_list">
+    <% for user in @users%>
+      <%= link_to user.name,by_user_tasks_path+"?userid="+user.id.to_s%>
+    <%end%>
+      </div>
+    </span>
+  <%end%>
+</div>
+<%= render :partial => "tasks/tasklist" %>
+<%= will_paginate @tasks %>
+      

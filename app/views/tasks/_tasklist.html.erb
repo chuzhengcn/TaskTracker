@@ -1,0 +1,26 @@
+<% if @tasks.blank?%>
+  <div class="no_task">没有任务</div>
+<%else%>
+  <div class="task_list">
+  <table>
+    <tr>
+      <th>任务名</th><th>需求人员</th><th>开发人员</th><th>测试人员</th><th>需求提交</th><th>提交测试</th><th>测试完成</th><th>发外网</th><th>当前状态</th><th>最后更新</th>
+    </tr>
+    <% @tasks.each do |task|%>
+    <tr>
+      <td class="task_table_name"><%= link_to task.name,edit_task_path(task) %></td>
+      <td><%= task_user_by_dep task,3 %></td>
+      <td><%= task_user_by_dep task,1 %></td>
+      <td><%= task_user_by_dep task,2 %></td>
+      <td><%= convet_time_to_m_d task.submit_requirement_date%></td>
+      <td><%= convet_time_to_m_d task.submit_test_date %></td>
+      <td><%= convet_time_to_m_d task.submit_test_over_date %></td>
+      <td><%= convet_time_to_m_d task.submit_deliver_date %></td>
+      <td><span class="task_state"><%=link_to task.state.name,task_path(task) %></span></td>
+      <td><%= time_ago_in_words(task.updated_at) %></td>
+    </tr>
+    <% end %>
+  </table>           
+</div>
+<%end%>
+      
