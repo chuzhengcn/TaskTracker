@@ -43,6 +43,8 @@ TaskTracker::Application.routes.draw do
       get  :thisweek_deliver
     end
   end
+
+  resources :users
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

@@ -32,6 +32,9 @@ header{ font-size:30px; padding:0 20px; line-height:60px; height:60px; overflow:
 header a{ color:#000;}
 header a:hover{ color:#4183C4;}
 header #keyword{ border-radius:3px 3px 3px 3px; width:154px; position:absolute; top:30px; left:1013px; border:solid 1px #dddddd; padding:3px 3px 3px 23px;border-color: #CCCCCC #DDDDDD #EAEAEA;background: url("../images/search_icon.png") no-repeat scroll 5px 50% #FFFFFF;}
+.setting{ position:absolute; top:0px; padding:3px 10px; right:5px; font-size:12px; font-weight:normal; height:15px;border-radius: 0px 0px 5px 5px; line-height:15px; background-color:#EEEEEE;border: 1px solid #fff;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);border-color: #E9E9E9 #E9E9E9 #F5F5F5;}
+.setting a{ color:#4183C4;}
+.setting a:hover{ text-decoration:underline;}
 .content{ background:url(../images/background-white.png) 0 0 no-repeat; padding:20px 25px;}
 .flash_notice{ font-size:14px; height:0; overflow:hidden; color:#000;}
 .set_flash_notice_dispaly{ height:28px; line-height:28px; background-color:#D7F7D5; padding:0 10px; border:solid 1px #ccc; margin-bottom:10px;}
