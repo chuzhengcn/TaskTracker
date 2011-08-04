@@ -1,4 +1,17 @@
-<% for user in @users %>
-	<div><%= user.name %></div>
-	<div><%= user.bind_ip %></div>
+<div class="edit_task_page_title">用户列表</div>
+<% if @users.blank? %>
+	<div class="no_task">没人</div>
+<% else%>
+	<div class="task_list">
+		<table>
+			<tr><th>名字</th><th>绑定IP</th><th>部门</th></tr>
+		<% for user in @users %>
+		<tr>
+			<td><%= link_to user.name,edit_user_path(user),:title=>'编辑' %></td>
+			<td><%= user.bind_ip %></td>
+			<td><%= dep_by_user user %></td>
+		</tr>
+		<% end %>
+	</table>
+	</div>
 <% end %>
