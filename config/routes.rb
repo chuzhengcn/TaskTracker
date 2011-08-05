@@ -28,7 +28,6 @@ TaskTracker::Application.routes.draw do
   resources :tasks do
     collection do
       get  :today
-      get  :today_requirment
       get  :today_submit_test
       get  :today_test_over
       get  :today_deliver
@@ -37,7 +36,6 @@ TaskTracker::Application.routes.draw do
       get  :by_state
       get  :me
       get  :thisweek
-      get  :thisweek_requirment
       get  :thisweek_submit_test
       get  :thisweek_test_over
       get  :thisweek_deliver
