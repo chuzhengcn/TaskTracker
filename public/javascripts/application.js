@@ -18,8 +18,8 @@ $(function(){
     case "已发布外网":
       $(this).find("a").attr("class","task_state_delivered");
       break;
-    case "需求未提交":
-      $(this).find("a").attr("class","task_state_requirement_not_ready");
+    case "测试打回":
+      $(this).find("a").attr("class","task_state_test_result_not_ready");
       break;
     case "测试已通过":
       $(this).find("a").attr("class","task_state_tested");

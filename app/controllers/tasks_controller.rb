@@ -55,12 +55,6 @@ class TasksController < ApplicationController
     get_today_task_count
     render :action => 'today'
   end
-
-  def today_requirment
-    @tasks = Task.today_requirment
-    get_today_task_count
-    render :action => 'today'
-  end
   
   def today_submit_test
     @tasks = Task.today_test
@@ -82,12 +76,6 @@ class TasksController < ApplicationController
 
   def thisweek
     @tasks = Task.thisweek_all
-    get_week_task_count
-    render :action => 'thisweek'
-  end
-
-  def thisweek_requirment
-    @tasks = Task.thisweek_requirment
     get_week_task_count
     render :action => 'thisweek'
   end
@@ -160,14 +148,12 @@ class TasksController < ApplicationController
   end
 
   def get_today_task_count
-    @tasks_requirment_count = Task.today_requirment.size.to_s
     @tasks_test_count = Task.today_test.size.to_s
     @tasks_test_over_count = Task.today_test_over.size.to_s
     @tasks_deliver_count = Task.today_deliver.size.to_s
   end
 
   def get_week_task_count
-    @tasks_requirment_count = Task.thisweek_requirment.size.to_s
     @tasks_test_count = Task.thisweek_test.size.to_s
     @tasks_test_over_count = Task.thisweek_test_over.size.to_s
     @tasks_deliver_count = Task.thisweek_deliver.size.to_s

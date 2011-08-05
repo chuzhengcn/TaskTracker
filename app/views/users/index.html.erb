@@ -9,7 +9,7 @@
 		<tr>
 			<td><%= link_to user.name,edit_user_path(user),:title=>'编辑' %></td>
 			<td><%= user.bind_ip %></td>
-			<td><%= dep_by_user user %></td>
+			<td><%= user.department.name %></td>
 		</tr>
 		<% end %>
 	</table>

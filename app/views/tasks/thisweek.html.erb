@@ -5,7 +5,6 @@
 <%= link_to "我的任务",me_tasks_path%>
 </nav>
 <div class="sub_nav">
-  <%=link_to "需提需求("+@tasks_requirment_count+")",thisweek_requirment_tasks_path %>
   <%=link_to "需提测("+@tasks_test_count+")",thisweek_submit_test_tasks_path %>
   <%=link_to "需测试完成("+@tasks_test_over_count+")",thisweek_test_over_tasks_path %>
   <%=link_to "需发外网("+@tasks_deliver_count+")",thisweek_deliver_tasks_path %>
