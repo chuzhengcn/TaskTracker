@@ -5,10 +5,8 @@ module TasksHelper
   def task_user_by_dep(task,dep_id)
     users = []
     for u in task.users
-     for i in u.departments
-      if i.id == dep_id
+      if u.department.id == dep_id
         users << u.name
-      end
      end 
     end
     users.join("+")

@@ -11,7 +11,6 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    @users_customers = get_user_by_dep(3)
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
   end
@@ -29,7 +28,6 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @users_customers = get_user_by_dep(3)
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
   end
@@ -146,12 +144,7 @@ class TasksController < ApplicationController
   private
   #根据主键Id暂时写死要查询的user分类
   def get_user_by_dep(dep_id)
-    dep = UserDepartmentShip.where(:department_id=> dep_id)
-    users = []
-    for p in dep
-      users << p.user.id
-    end
-    User.find(users)
+    users = User.where(:department_id=> dep_id)
   end
 
   def get_tasks_by_user(user)

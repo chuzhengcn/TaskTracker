@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110805034503) do
+ActiveRecord::Schema.define(:version => 20110805051937) do
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110805034503) do
     t.date     "submit_test_date"
     t.date     "submit_test_over_date"
     t.date     "submit_deliver_date"
+    t.string   "require_people_name"
   end
 
   create_table "users", :force => true do |t|

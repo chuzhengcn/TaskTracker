@@ -37,11 +37,7 @@
       <tr>
         <td class="task_attr_name">需求人员：</td>
         <td>
-          <% unless  @users_customers.blank? %>
-          <% for user in @users_customers%>
-            <%= check_box_tag "task[user_ids][]",user.id,@task.users.include?(user)%><%= user.name%>
-          <%end%>
-        <%end%>
+          <%= t.text_field :require_people_name %>
         </td>
       </tr>
       <tr>

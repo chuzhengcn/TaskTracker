@@ -9,7 +9,7 @@
     <% @tasks.each do |task|%>
     <tr>
       <td class="task_table_name"><%= link_to task.name,edit_task_path(task) %></td>
-      <td><%= task_user_by_dep task,3 %></td>
+      <td><%= task.require_people_name %></td>
       <td><%= task_user_by_dep task,1 %></td>
       <td><%= task_user_by_dep task,2 %></td>
       <td><%= convet_time_to_m_d task.submit_requirement_date%></td>
