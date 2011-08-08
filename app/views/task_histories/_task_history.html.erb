@@ -1,0 +1,6 @@
+<div>测试历史</div>
+<% @task.task_histories.each do |history| %>
+  <p> <%= history.content %> </p> 
+  <p><%= time_ago_in_words history.created_at %></p>
+  <%= link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %>
+<% end %>

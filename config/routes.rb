@@ -40,6 +40,7 @@ TaskTracker::Application.routes.draw do
       get  :thisweek_test_over
       get  :thisweek_deliver
     end
+    resources :task_histories
   end
 
   resources :users

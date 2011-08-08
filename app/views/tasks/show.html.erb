@@ -32,4 +32,8 @@
     </tr>    
   </table>
 </div>
-<div><%= link_to raw('<span class="leftarrow icon"></span>返回任务列表'), tasks_path,:class=>'back button' %></div>
+<div><%= link_to '提交测试', new_task_task_history_path(@task),:class=>'button' %> <%= link_to '测试打回', new_task_task_history_path(@task),:class=>'negative button' %> <%= link_to '测试通过', new_task_task_history_path(@task),:class=>'positive button' %> <%= link_to raw('<span class="leftarrow icon"></span>返回任务列表'), tasks_path,:class=>'back button' %></div>
+
+
+<%= render :partial => "task_histories/task_history" %>
+
