@@ -107,7 +107,8 @@ class TasksController < ApplicationController
     tasks_total = get_tasks_by_user(params[:userid])
     @tasks = tasks_total.paginate :page=>params[:page],:order=>'created_at desc',:per_page => 20
     @states = State.all
-    @users = User.all
+    @users_developers = get_user_by_dep(1)
+    @users_testers = get_user_by_dep(2)
     flash.now[:notice] = User.find(params[:userid]).name+'的任务有'+tasks_total.size.to_s+'个'
     render :action => 'index'
   end
@@ -116,7 +117,8 @@ class TasksController < ApplicationController
     tasks_total = Task.where([ "state_id = ?",params[:stateid] ] )
     @tasks = tasks_total.paginate :page=>params[:page],:order=>'created_at desc',:per_page => 20
     @states = State.all
-    @users = User.all
+    @users_developers = get_user_by_dep(1)
+    @users_testers = get_user_by_dep(2)
     flash.now[:notice] = State.find(params[:stateid]).name+'的任务有'+tasks_total.size.to_s+'个'
     render :action => 'index'
   end
