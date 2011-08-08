@@ -14,7 +14,7 @@
     <%= form_tag search_tasks_path,:method => :get do %>
       <%= text_field_tag "keyword","",:Placeholder => "任务名" %>
     <%end%>
-    <div class="setting"><%= link_to '设置',users_path %></div>
+    <div class="setting"><%= link_to '设置用户',users_path %></div>
     </header>
     <div class="content">
       <div class="flash_notice"><%= flash[:notice] %></div>

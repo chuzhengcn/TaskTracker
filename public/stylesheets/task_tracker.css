@@ -16,7 +16,7 @@ body{ font-size:12px; font-family:"宋体"; color:#333;}
 a{ outline:none; color:#4183C4; text-decoration:none;}
 .clear{ clear:both; overflow:hidden; height:0;}
 .hide{ visibility:hidden;}
-input[type="submit"]{box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);border-radius: 4px 4px 4px 4px;color: #333333;font-weight: bold;border:solid 1px #ebebeb; height:28px; line-height:28px; padding:0 15px; cursor:pointer;
+input[type="submit"]{box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);border-radius: 4px 4px 4px 4px;color: #333333;font-weight: bold;border:solid 1px #ebebeb; height:28px; line-height:28px; padding:0 15px; cursor:pointer; outline:none;
 background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.42, rgb(235,235,235)), color-stop(1, rgb(255,255,255)));
 background-image:-moz-linear-gradient( center bottom, rgb(241,241,241) 42%, rgb(255,255,255) 100%); 
 }

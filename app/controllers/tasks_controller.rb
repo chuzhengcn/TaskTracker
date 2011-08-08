@@ -2,7 +2,8 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.paginate :page=>params[:page],:order=>'created_at desc',:per_page => 20
     @states = State.all
-    @users = User.all
+    @users_developers = get_user_by_dep(1)
+    @users_testers = get_user_by_dep(2)
   end
   
   def show

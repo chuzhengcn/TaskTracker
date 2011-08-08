@@ -14,4 +14,8 @@
 		<% end %>
 	</table>
 	</div>
-<% end %>
+      <% end %>
+      <div>
+<%= link_to raw('<span class="plus icon"></span>添加新用户'),new_user_path,:class => "button " %>
+        <%= link_to raw('<span class="leftarrow icon"></span>返回任务列表'), tasks_path,:class=>'back button'%>
+      </div>

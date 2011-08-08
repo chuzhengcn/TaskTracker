@@ -16,11 +16,22 @@
       </div>
     </span>
   <%end%>
-  <% unless @users.blank?%>
+  <% unless @users_developers.blank?%>
     <span class="by_group_check">
-      <div>任务人员</div>
+      <div>开发人员</div>
       <div class="group_list">
-    <% for user in @users%>
+    <% for user in @users_developers%>
+      <%= link_to user.name,by_user_tasks_path+"?userid="+user.id.to_s%>
+    <%end%>
+      </div>
+    </span>
+  <%end%>
+
+  <% unless @users_testers.blank?%>
+    <span class="by_group_check">
+      <div>测试人员</div>
+      <div class="group_list">
+    <% for user in @users_testers%>
       <%= link_to user.name,by_user_tasks_path+"?userid="+user.id.to_s%>
     <%end%>
       </div>

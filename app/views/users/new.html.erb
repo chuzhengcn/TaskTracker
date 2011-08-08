@@ -1,5 +1,5 @@
 <div class="edit_task_page_title">
-编辑用户：<%= @user.name %>
+添加用户：
 </div>
  <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -19,16 +19,15 @@
         <td class="task_attr_name">名字：</td><td><%= t.text_field :name,:required=>true %></td>
       </tr>
       <tr>
-        <td class="task_attr_name">IP：</td><td><%= t.text_field :bind_ip%></td>
+        <td class="task_attr_name">IP：</td><td><%= t.text_field :bind_ip %></td>
       </tr>
       <tr>
         <td class="task_attr_name">部门：</td><td><%= t.select :department_id, department_options %></td>
       </tr> 
     </table>
-    <div class="edit_task_submit_outer"> <%= t.submit '更新用户' %> </div>
+    <div class="edit_task_submit_outer"> <%= t.submit '添加用户' %> </div>
   <%end%>
 </div>
 <div class="related_link_group">
   <%= link_to raw('<span class="leftarrow icon"></span>返回用户列表'), users_path,:class=>'back button'%>
-  <%= link_to raw('<span class="trash icon"></span>删除此用户') , @user,:method=> :delete,:confirm => '确定删除？',:class=>'negative button'%>
 </div>
