@@ -81,7 +81,7 @@ background-image:-moz-linear-gradient( center bottom, rgb(239,239,239) 42%, rgb(
 .related_link_group{ float:left; border-left:solid 1px #ddd; padding:0 0 0 20px; min-height:200px;}
 .related_link_group .back{ margin-right:10px;}
 .task_info{border:solid 1px #ddd; background-color:#F6F6F6;border-radius: 5px 5px 5px 5px; padding:10px 5px; margin-bottom:10px;}
-.no_task{ background-color:#EAF2F5; border:1px solid #BEDCE7; color:#000; text-align:center; padding:30px 0; margin:10px 0;}
+.no_task{ background-color:#EAF2F5; border:1px solid #BEDCE7; color:#000; text-align:center; padding:30px 0; margin:10px 0; font-weight:bold; font-size:14px;}
 .by_group_check{background:url(../images/subnav_dropdown_arrow.png) right 0px no-repeat; padding:5px 15px 5px 10px;  text-align:center; border: 1px solid transparent; display:inline-block; cursor:pointer; position:relative; margin-right:10px;}
 .by_group_check:hover{ background-color:#f8f8f8; border:solid 1px #ccc;border-radius:4px 4px 0 0;}
 .by_group_check:hover .group_list{ display:block;}
@@ -90,3 +90,13 @@ background-image:-moz-linear-gradient( center bottom, rgb(239,239,239) 42%, rgb(
 .group_list a:hover{ background-color:#3E7AC2; color:#fff;}
 .subnav_blank{ padding-top:5px;}
 .pagination{padding-bottom:10px;}
+/*show task*/
+#task_history_form{ display:none;}
+#task_history_form #task_history_state_id{ visibility:hidden;}
+#task_history_form #task_history_content{ width:700px; height:200px;border-color: #999999 #CCCCCC #CCCCCC #999999;border-radius: 3px 3px 3px 3px;border-right: 1px solid #CCCCCC;border-style: solid;border-width: 1px;line-height: 18px;padding: 0 3px; margin-bottom:8px;}
+#task_history_form input[type="submit"]{ float:left;}
+.set_task_history_btn{ padding-bottom:10px;}
+.task_histories_outer h1{ font-size:18px; font-weight:bold;padding: 10px 0 10px 0;}
+.task_history_item{background-color: #E9F1F4;border-color: #E9F1F4 #D8DEE2 #D8DEE2 #E9F1F4;border-radius:3px;border-style: solid;border-width:1px 1px 1px 2px; margin-bottom:10px; padding:15px 10px;}
+.task_history_meta{ float:right; width:130px; border-left:solid 1px #BEDCE7; line-height:18px; color:#333; padding-left:20px;}
+.history_content{ float:left; line-height:18px; padding-left; width:880px;}

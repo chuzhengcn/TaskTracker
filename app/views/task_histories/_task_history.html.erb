@@ -1,8 +1,19 @@
-<div>测试历史</div>
-<% @task.task_histories.each do |history| %>
+<div class="task_histories_outer">
+  <h1>任务历史</h1>
+  <% if @task.task_histories.blank? %>
+    <div class="no_task">暂无历史</div>
+  <% else %>
   
-  <p><%= history.user.name %> 把任务状态修改为 <%= history.state.name %> in <%= time_ago_in_words history.created_at %> ago <%= link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %></p>
-  <p> <%= simple_format history.content %> </p> 
-  
-  
+    <% @task.task_histories.each do |history| %>
+      <div class="task_history_item">
+        <div class="task_history_meta">
+          <%= history.state.name %><br/><%= history.user.name %><br/><%= time_ago_in_words history.created_at %><br/>
+          <%= link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %>
+        </div>
+        <div class="history_content"> <%= simple_format history.content %> </div> 
+        <div class="clear"></div>
+   </div>
+  <% end %>
+ 
 <% end %>
+</div>

@@ -32,6 +32,7 @@ $(function(){
   add_flash_notice_style();
   add_selected_link();
   add_data_picker();
+  init_task_history_form();
 });
 
 //add_flash_notice_style
@@ -63,4 +64,20 @@ $("input.datepicker").datepicker({
             yearRange: '-1:+1',
             duration: 'fast'
             });  
+}
+
+function  init_task_history_form(){
+ $("#apply_to_test_in_task_history,#test_failed_in_task_history,#test_pass_in_task_history").click(function(){
+   //pass state_id to select
+    var dialog_title = $(this).html();
+    var state_id = $(this).attr("name");
+    $('#task_history_state_id').val(state_id);
+    $('#task_history_form').dialog({ 
+      title: dialog_title,
+      height: 285,
+      width:735,
+      resizable: false
+    });
+    return false;
+ }); 
 }
