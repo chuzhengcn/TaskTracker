@@ -1,6 +1,8 @@
 <div>测试历史</div>
 <% @task.task_histories.each do |history| %>
+  
+  <p><%= history.user.name %> 把任务状态修改为 <%= history.state.name %> in <%= time_ago_in_words history.created_at %> ago <%= link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %></p>
   <p> <%= history.content %> </p> 
-  <p><%= time_ago_in_words history.created_at %></p>
-  <%= link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %>
+  
+  
 <% end %>

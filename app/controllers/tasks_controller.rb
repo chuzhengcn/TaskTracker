@@ -8,6 +8,7 @@ class TasksController < ApplicationController
   
   def show
     @task = Task.find(params[:id])
+    @task_history = TaskHistory.new
   end
 
   def edit
