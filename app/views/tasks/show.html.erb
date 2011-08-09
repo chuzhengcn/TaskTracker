@@ -29,7 +29,13 @@
     </tr>
     <tr>
       <td class="task_attr_name">备注：</td><td><%= @task.description %></td>
-    </tr>    
+    </tr>
+    <tr>
+      <td class="task_attr_name">附件：</td><td><% for attachment in @task.attachments %><%= link_to attachment.pic.name, attachment.pic.url %><% end %></td>
+    </tr>
+ 
+    
+
   </table>
 </div>
 <div class="set_task_history_btn">

@@ -15,6 +15,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
+    @task.attachments.build
   end
 
   def update
@@ -32,6 +33,7 @@ class TasksController < ApplicationController
     @task = Task.new
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
+    @task.attachments.build
   end
 
   def create
