@@ -3,14 +3,15 @@ class TaskHistoriesController < ApplicationController
 
   def create 
     if @user.blank?
-       flash[:notice] = '添加失败，您没有权限'
+       flash[:notice] = '修改状态失败，您没有权限'
     else
+      @task.state_id = params[:task_history][:state_id]
       params[:task_history][:user_id] = @user.id
       @task_history = @task.task_histories.build( params[:task_history] )
-      if @task_history.save
-         flash[:notice] = '提测成功'
+      if @task_history.save && @task.save 
+         flash[:notice] = '任务状态修改成功'
       else
-         flash[:notice] = '添加失败'
+         flash[:notice] = '任务状态修改失败'
       end
     end 
     redirect_to task_path(@task)
