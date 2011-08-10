@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110810024910) do
+ActiveRecord::Schema.define(:version => 20110810073203) do
 
   create_table "attachments", :force => true do |t|
     t.string   "pic_file_name"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(:version => 20110810024910) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "task_history_id"
-    t.string   "doc_file_name"
-    t.string   "doc_content_type"
-    t.integer  "doc_file_size"
-    t.datetime "doc_updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "departments", :force => true do |t|

@@ -144,7 +144,7 @@ class TasksController < ApplicationController
   def get_tasks_by_user(user)
     userselected = User.find(user)
     tasks = []
-    not_deliver_tasks = Task.where("state_id != ? ",2);
+    not_deliver_tasks = Task.where("state_id != ? ",7);
     for d in not_deliver_tasks
       if d.users.include?(userselected)
         tasks << d

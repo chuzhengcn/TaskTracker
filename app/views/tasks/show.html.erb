@@ -49,7 +49,7 @@
 <%= form_for @task_history, :url => task_task_histories_path(@task),:html => { :multipart => true } do |f| %>
   <%= f.text_area :content,:required=>true %>
   <% f.fields_for :attachments do |builder| %>
-    <%= builder.file_field :doc %>
+    <%= builder.file_field :document %>
   <% end %>
   <%= f.select :state_id, state_options %>
   <%= f.submit '提交' %>
