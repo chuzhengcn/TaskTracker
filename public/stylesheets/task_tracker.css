@@ -62,11 +62,11 @@ background-image:-moz-linear-gradient( center bottom, rgb(239,239,239) 42%, rgb(
 .task_list table tr:hover td{ background-color:#EAF2F5;}
 .task_list table tr:hover td.task_table_name a{ text-decoration:underline;}
 .task_table_name{ max-width:150px;}
-.task_state_requirement_ready{ background-color:#B69E67; display:inline-block;color:#fff;padding:3px;}
-.task_state_developing{background-color:#FF704F;display:inline-block;color:#fff;padding:3px;}
+.task_state_requirement_ready{ background-color:#FF704F; display:inline-block;color:#fff;padding:3px;}
+.task_state_developing{background-color:#B69E67;display:inline-block;color:#fff;padding:3px;}
 .task_state_testing{background-color:#1E4152;display:inline-block;color:#fff;padding:3px;}
-.task_state_delivered{background-color:#000;display:inline-block;color:#fff;padding:3px;}
-.task_state_test_result_not_ready{background-color:#999;display:inline-block;color:#fff;padding:3px;}
+.task_state_delivered{background-color:#999;display:inline-block;color:#fff;padding:3px;}
+.task_state_test_result_not_ready{background-color:#f00;display:inline-block;color:#fff;padding:3px;}
 .task_state_tested{background-color:#81B059;display:inline-block;color:#fff;padding:3px;}
 /*edit_task*/
 .edit_task_page_title{ font-size:18px; font-weight:bold; padding-bottom:10px; border-bottom:solid 1px #ddd; margin-bottom:10px;}
@@ -80,7 +80,7 @@ background-image:-moz-linear-gradient( center bottom, rgb(239,239,239) 42%, rgb(
 .edit_task_form{ float:left; width:600px;}
 .related_link_group{ float:left; border-left:solid 1px #ddd; padding:0 0 0 20px; min-height:200px;}
 .related_link_group .back{ margin-right:10px;}
-.task_info{border:solid 1px #ddd; background-color:#F6F6F6;border-radius: 5px 5px 5px 5px; padding:10px 5px; margin-bottom:10px;}
+.task_info{border:solid 1px #ddd; background-color:#F6F6F6;border-radius: 5px 5px 5px 5px; padding:10px 5px; margin-bottom:10px; position:relative;}
 .task_info_content{ float:left; width:700px;}
 .no_task{ background-color:#EAF2F5; border:1px solid #BEDCE7; color:#000; text-align:center; padding:30px 0; margin:10px 0; font-weight:bold; font-size:14px;}
 .by_group_check{background:url(../images/subnav_dropdown_arrow.png) right 0px no-repeat; padding:5px 15px 5px 10px;  text-align:center; border: 1px solid transparent; display:inline-block; cursor:pointer; position:relative; margin-right:10px;}
@@ -100,10 +100,20 @@ background-image:-moz-linear-gradient( center bottom, rgb(239,239,239) 42%, rgb(
 .set_task_history_btn{ float:right; width:200px; padding:10px 20px; border-left:solid 1px #ccc;}
 .set_task_history_btn a{display:inline-block; margin-bottom:10px;}
 .task_histories_outer h1{ font-size:18px; font-weight:bold;padding: 10px 0 10px 0;}
-.task_history_item{border-radius:5px;border: 1px solid #BEDCE7; padding:15px 10px; border-bottom:none;
+.task_history_item{border: 1px solid #BEDCE7; padding:15px 10px; border-bottom:none;
 background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.42, rgb(228, 236, 243)), color-stop(1, rgb(234, 242, 245)));
 background-image: -moz-linear-gradient( center bottom, rgb(228, 236, 243) 42%, rgb(234, 242, 245) 100%);
 }
 .task_history_meta{ float:right; width:130px; border-left:solid 1px #BEDCE7; line-height:18px; color:#333; padding-left:20px;}
 .history_content{ float:left; line-height:18px; padding-left; width:880px;}
-.history_item_container{ border-bottom:solid 1px #BEDCE7; border-radius:0 0 5px 5px;}
+.history_item_container{ border-bottom:solid 1px #BEDCE7;}
+#task_show_view_state{ position:absolute; top:50px; left:400px; font-size:20px; border-radius:10px; width:140px; padding:10px; text-align:center; font-weight:bold;
+-webkit-transform: rotate(-10deg);
+-moz-transform: rotate(-10deg);
+}
+.task_state_show_requirement_ready{ color:#FF704F;border:solid 3px #FF704F;}
+.task_state_show_developing{color:#B69E67;border:solid 3px #B69E67;}
+.task_state_show_testing{;color:#1E4152;border:solid 3px #1E4152;}
+.task_state_show_delivered{color:#999;border:solid 3px #999;}
+.task_state_show_test_result_not_ready{color:#f00;border:solid 3px #f00;}
+.task_state_show_tested{color:#81B059;border:solid 3px #81B059;}

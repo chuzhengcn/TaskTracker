@@ -1,6 +1,11 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 $(function(){
+  //ie reject
+  if($.browser.msie)
+{
+  alert("程序不支持ie浏览器，请移步Firefox或Chorme")
+}
   //add task_state
   $(".task_state").each(function(){
     var task_state_val = $(this).find("a").html();
@@ -33,6 +38,7 @@ $(function(){
   add_selected_link();
   add_data_picker();
   init_task_history_form();
+  set_show_view_task_state();
 });
 
 //add_flash_notice_style
@@ -80,4 +86,32 @@ function  init_task_history_form(){
     });
     return false;
  }); 
+}
+
+function set_show_view_task_state(){
+    var task_state_val = $("#task_show_view_state").html();
+    switch(task_state_val)
+  {
+    case "需求已提交":
+      $("#task_show_view_state").addClass("task_state_show_requirement_ready");
+      break;
+    case "任务已分配":
+      $("#task_show_view_state").addClass("task_state_show_developing");
+      break;
+    case "已提交测试":
+      $("#task_show_view_state").addClass("task_state_show_testing");
+      break;
+    case "已发布外网":
+      $("#task_show_view_state").addClass("task_state_show_delivered");
+      break;
+    case "测试打回":
+      $("#task_show_view_state").addClass("task_state_show_test_result_not_ready");
+      break;
+    case "测试已通过":
+      $("#task_show_view_state").addClass("task_state_show_tested");
+      break;
+    default:
+      break;
+  }
+
 }
