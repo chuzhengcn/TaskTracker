@@ -38,6 +38,7 @@ header #keyword{ border-radius:3px 3px 3px 3px; width:154px; position:absolute; 
 .content{ background:url(../images/background-white.png) 0 0 no-repeat; padding:20px 25px;}
 .flash_notice{ font-size:14px; height:0; overflow:hidden; color:#000;}
 .set_flash_notice_dispaly{ height:28px; line-height:28px; background-color:#D7F7D5; padding:0 10px; border:solid 1px #ccc; margin-bottom:10px;}
+#error_explanation{border:solid 1px #ccc; background-color:#fbd5d6; padding:5px 10px; line-height:20px;margin-bottom:10px;}
 .new_task_btn_outer{ float:right; }
 .new_task_btn_outer a{ height:auto; }
 nav{  height:26px; padding:6px 10px; border-radius: 5px 5px 0px 0px;border: 1px solid #DDDDDD; clear:both;

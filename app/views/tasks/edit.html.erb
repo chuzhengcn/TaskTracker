@@ -3,13 +3,11 @@
 </div>
  <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
+      <ol>
       <% @task.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
+      </ol>
     </div>
   <% end %>
     <div class="edit_task_form">
