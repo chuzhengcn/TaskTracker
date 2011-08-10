@@ -59,10 +59,15 @@
       <tr>
         <td class="task_attr_name">备注：</td><td><%= t.text_area :description%></td>
       </tr>
+      <% unless @task.attachments.blank? %>
+      <tr>
+        <td class="task_attr_name">原附件：</td><td><% for attachment in @task.attachments %> <%= link_to attachment.pic.original_filename, attachment.pic.url %><% end %></td>
+      </tr>
+      <%end%>
       <% t.fields_for :attachments do |builder| %>
      <tr>
         <td class="task_attr_name">附件：</td>   
-        <td><%= builder.file_field :pic %>  </td>
+        <td><%= builder.file_field :pic %> <%= builder.check_box :_destroy %>删除附件 </td>
      </tr>
       <% end %> 
     </table>
