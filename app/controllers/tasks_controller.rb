@@ -9,13 +9,13 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @task_history = TaskHistory.new
+    @task_history.attachments.build
   end
 
   def edit
     @task = Task.find(params[:id])
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
-    @task.attachments.build
   end
 
   def update
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
    if @task.update_attributes(params[:task])
      flash[:notice] = '任务已成功更新'
-     redirect_to tasks_url
+     redirect_to task_url(@task)
    else
      render :action => "edit"
    end
