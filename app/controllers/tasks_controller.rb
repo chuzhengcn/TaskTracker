@@ -16,6 +16,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
+    if @task.attachments.blank?
+        @task.attachments.build
+    end
   end
 
   def update
