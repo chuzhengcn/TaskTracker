@@ -118,3 +118,4 @@ background-image: -moz-linear-gradient( center bottom, rgb(228, 236, 243) 42%, r
 .task_state_show_delivered{color:#999;border:solid 3px #999;}
 .task_state_show_test_result_not_ready{color:#f00;border:solid 3px #f00;}
 .task_state_show_tested{color:#81B059;border:solid 3px #81B059;}
+.include_link_th a{ color:#999;text-decoration:underline;}

@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.paginate :page=>params[:page],:order=>'created_at desc',:per_page => 20
+    order_by = order_through_link
+    @tasks = Task.paginate :page=>params[:page],:order=> order_by,:per_page => 20
     @states = State.all
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
@@ -116,7 +117,7 @@ class TasksController < ApplicationController
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
     flash.now[:notice] = User.find(params[:userid]).name+'的任务有'+tasks_total.size.to_s+'个'
-    render :action => 'index'
+    render :template => 'tasks/filter'
   end
 
   def by_state
@@ -126,7 +127,7 @@ class TasksController < ApplicationController
     @users_developers = get_user_by_dep(1)
     @users_testers = get_user_by_dep(2)
     flash.now[:notice] = State.find(params[:stateid]).name+'的任务有'+tasks_total.size.to_s+'个'
-    render :action => 'index'
+    render :template => 'tasks/filter'
   end
 
   def me
@@ -166,5 +167,17 @@ class TasksController < ApplicationController
     @tasks_test_count = Task.thisweek_test.size.to_s
     @tasks_test_over_count = Task.thisweek_test_over.size.to_s
     @tasks_deliver_count = Task.thisweek_deliver.size.to_s
+  end
+
+  def order_through_link
+    case params[:order_by]
+    when "state_id"
+      order_by =  params[:order_by] + ' asc'
+    when nil
+      order_by = 'created_at desc'
+    else
+      order_by =  params[:order_by] + ' desc'
+    end
+    return order_by
   end
 end
