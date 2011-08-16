@@ -9,7 +9,7 @@
         <div class="task_history_meta">
           <%= history.state.name %><br/><%= history.user.name %><br/><%= time_ago_in_words history.created_at %><br/>
           <% for attachment in history.attachments %><%= link_to attachment.document.original_filename, attachment.document.url %><% end %><br/>
-          <% # link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %>
+          <%=  link_to '删除', task_task_history_path(@task,history),:method=> :delete,:confirm => '确定删除？' %>
         </div>
         <div class="history_content"> <%= simple_format history.content %> </div> 
         <div class="clear"></div>
