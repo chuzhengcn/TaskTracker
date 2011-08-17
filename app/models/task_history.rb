@@ -1,3 +1,4 @@
+# encoding: utf-8 
 class TaskHistory < ActiveRecord::Base
   belongs_to :task
   belongs_to :user

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TaskHistoriesController < ApplicationController
   before_filter :find_task,:get_user
 

@@ -13,7 +13,7 @@
     </div>
   <% end %>
     <div class="edit_task_form">
-  <% form_for @user do |t|%>
+  <%= form_for @user do |t|%>
     <table class="edit_task_table">
       <tr>
         <td class="task_attr_name">名字：</td><td><%= t.text_field :name,:required=>true %></td>

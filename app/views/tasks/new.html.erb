@@ -14,7 +14,7 @@
   <% end %>
   <div>
     <div class="edit_task_form">
-  <% form_for @task,:html => { :multipart => true } do |t|%>
+  <%= form_for @task,:html => { :multipart => true } do |t|%>
     <table class="edit_task_table">
       <tr>
         <td class="task_attr_name">任务名：</td><td><%= t.text_field :name ,:required=>true%></td>
@@ -60,7 +60,7 @@
       <tr>
         <td class="task_attr_name">备注：</td><td><%= t.text_area :description%></td>
       </tr>
-      <% t.fields_for :attachments do |builder| %>
+      <%= t.fields_for :attachments do |builder| %>
      <tr>
         <td class="task_attr_name">附件：</td>   
         <td><%= builder.file_field :pic %>  </td>

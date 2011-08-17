@@ -1,3 +1,4 @@
+#encoding: utf-8 
 class TasksController < ApplicationController
   def index
     order_by = order_through_link
