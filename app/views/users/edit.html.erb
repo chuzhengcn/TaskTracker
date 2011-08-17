@@ -1,0 +1,34 @@
+<div class="edit_task_page_title">
+编辑用户：<%= @user.name %>
+</div>
+ <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="edit_task_form">
+  <% form_for @user do |t|%>
+    <table class="edit_task_table">
+      <tr>
+        <td class="task_attr_name">名字：</td><td><%= t.text_field :name,:required=>true %></td>
+      </tr>
+      <tr>
+        <td class="task_attr_name">IP：</td><td><%= t.text_field :bind_ip,:pattern=>'\d+\.\d+\.\d+\.\d+',:title=>'例如：192.168.1.155'%></td>
+      </tr>
+      <tr>
+        <td class="task_attr_name">部门：</td><td><%= t.select :department_id, department_options %></td>
+      </tr> 
+    </table>
+    <div class="edit_task_submit_outer"> <%= t.submit '更新用户' %> </div>
+  <%end%>
+</div>
+<div class="related_link_group">
+  <%= link_to raw('<span class="leftarrow icon"></span>返回用户列表'), users_path,:class=>'back button'%>
+  <%= link_to raw('<span class="trash icon"></span>删除此用户') , @user,:method=> :delete,:confirm => '确定删除？',:class=>'negative button'%>
+</div>
