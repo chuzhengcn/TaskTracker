@@ -5,7 +5,7 @@ set :branch, "master"
 set :user, "syyx"
 set :port, "22"
 
-set :deploy_to, "/home/syyx/sites"
+set :deploy_to, "/home/syyx/sites/TaskTracker/"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
@@ -36,7 +36,7 @@ namespace :deploy do
 end
 
 #  如果將database.yml放在shared下，請打開
-# after "deploy:update_code", "deploy:copy_config_files" 
+ after "deploy:update_code", "deploy:copy_config_files" 
 
 # 如果有實作使用者上傳檔案到public/system，請打開
  after "deploy:finalize_update", "deploy:update_symlink" 
